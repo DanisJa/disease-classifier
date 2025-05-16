@@ -82,15 +82,15 @@ def predict(data: HealthData):
     }
 
 @app.get("/medication")
-def get_medication(icd: str = Query(...), age: int = Query(...)):
-    for disease in disease_data:
-        if disease["icd"].lower() == icd.lower():
+def get_medication(disease: str = Query(...), age: int = Query(...)):
+    for d in disease_data:
+        if d["disease"].lower() == disease.lower():
             result = []
-            for med in disease["medications"]:
+            for med in d["medications"]:
                 dosage = get_dosage_by_age(age, med["age_dosage_rules"])
                 result.append({
                     "medication": med["name"],
                     "recommended_dosage": dosage
                 })
-            return {"disease": disease["disease"], "medications": result}
-    return {"error": "ICD code not found"}
+            return {"disease": d["disease"], "medications": result}
+    return {"error": "Disease not found"}
