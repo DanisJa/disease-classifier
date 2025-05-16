@@ -1,0 +1,22 @@
+{
+    "Hypertension": "I10",
+    "Diabetes": "E11",
+    "Obesity": "E66",
+    "Influenza": "J10",
+    "COVID-19": "U07.1",
+    "Common Cold": "J00",
+    "Asthma": "J45",
+    "Anemia": "D64.9",
+    "Allergic Rhinitis": "J30",
+    "Urinary Infection": "N39.0",
+    "Gastritis": "K29",
+    "Eczema": "L30",
+    "Psoriasis": "L40",
+    "Migraine": "G43",
+    "Osteoarthritis": "M15-M19",
+    "Rheumatoid Arthritis": "M06",
+    "Major Depressive Disorder": "F32",
+    "Anxiety": "F41.1",
+    "Schizophrenia": "F20",
+    "Dermatitis": "L20-L30"
+}

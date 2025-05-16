@@ -1,8 +1,10 @@
 import json
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from pydantic import BaseModel, Field
 from typing import List, Optional
 from transformers import pipeline
+from typing import List, Dict, Any
+
 
 app = FastAPI()
 
@@ -10,7 +12,7 @@ app = FastAPI()
 with open("diseases.json", "r", encoding="utf-8") as f:
     COMMON_DISEASES = json.load(f)
 
-classifier = pipeline("zero-shot-classification", model="cross-encoder/nli-deberta-v3-small")
+classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
 
 class HealthData(BaseModel):
     text: str = Field(..., description="Patient symptoms or description")
@@ -29,6 +31,24 @@ class HealthData(BaseModel):
         description="Gender: male, female, or other"
     )
     diseases: Optional[List[str]] = Field(None, description="Optional list of diseases to consider")
+
+
+# Load JSON data at startup
+with open("disease_dosage_rules_full.json", "r") as f:
+    disease_data: List[Dict[str, Any]] = json.load(f)
+
+def get_dosage_by_age(age: int, rules: List[Dict[str, str]]) -> str:
+    for rule in rules:
+        age_range = rule["age_range"]
+        if "+" in age_range:
+            min_age = int(age_range.replace("+", ""))
+            if age >= min_age:
+                return rule["dosage"]
+        else:
+            min_age, max_age = map(int, age_range.split("-"))
+            if min_age <= age <= max_age:
+                return rule["dosage"]
+    return "No dosage rule found"
 
 @app.post("/predict")
 def predict(data: HealthData):
@@ -60,3 +80,17 @@ def predict(data: HealthData):
         "predicted_disease": result["labels"][0],
         "predictions": [{"disease": label, "score": score} for label, score in zip(result["labels"], result["scores"])]
     }
+
+@app.get("/medication")
+def get_medication(icd: str = Query(...), age: int = Query(...)):
+    for disease in disease_data:
+        if disease["icd"].lower() == icd.lower():
+            result = []
+            for med in disease["medications"]:
+                dosage = get_dosage_by_age(age, med["age_dosage_rules"])
+                result.append({
+                    "medication": med["name"],
+                    "recommended_dosage": dosage
+                })
+            return {"disease": disease["disease"], "medications": result}
+    return {"error": "ICD code not found"}

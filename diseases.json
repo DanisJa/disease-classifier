@@ -1,6 +1,6 @@
 [
     "Hypertension",
-    "Diabetes Mellitus",
+    "Diabetes",
     "Obesity",
     "Influenza",
     "COVID-19",
@@ -8,17 +8,15 @@
     "Asthma",
     "Anemia",
     "Allergic Rhinitis",
-    "Urinary Tract Infection",
-    "Gastroenteritis",
+    "Urinary Infection",
+    "Gastritis",
     "Eczema",
     "Psoriasis",
     "Migraine",
     "Osteoarthritis",
     "Rheumatoid Arthritis",
-    "Gastroesophageal Reflux Disease",
     "Major Depressive Disorder",
-    "Generalized Anxiety Disorder",
-    "Chronic Obstructive Pulmonary Disease",
-    "HIV/AIDS",
-    "Diabetes Mellitus"
+    "Anxiety",
+    "Schizophrenia",
+    "Dermatitis"
 ]

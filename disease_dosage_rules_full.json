@@ -1,0 +1,438 @@
+[
+    {
+        "disease": "Hypertension",
+        "icd": "I10",
+        "medications": [
+            {
+                "name": "Lisinopril",
+                "age_dosage_rules": [
+                    {
+                        "age_range": "0-17",
+                        "dosage": "Not recommended"
+                    },
+                    {
+                        "age_range": "18-64",
+                        "dosage": "10-40mg daily"
+                    },
+                    {
+                        "age_range": "65+",
+                        "dosage": "Start at 5mg daily, monitor BP & kidneys"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "disease": "Diabetes",
+        "icd": "E11",
+        "medications": [
+            {
+                "name": "Metformin",
+                "age_dosage_rules": [
+                    {
+                        "age_range": "0-11",
+                        "dosage": "Not recommended"
+                    },
+                    {
+                        "age_range": "12-17",
+                        "dosage": "500mg once daily, max 2000mg/day"
+                    },
+                    {
+                        "age_range": "18-64",
+                        "dosage": "500-1000mg twice daily"
+                    },
+                    {
+                        "age_range": "65+",
+                        "dosage": "Start low, monitor renal function"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "disease": "Obesity",
+        "icd": "E66",
+        "medications": [
+            {
+                "name": "Orlistat",
+                "age_dosage_rules": [
+                    {
+                        "age_range": "0-11",
+                        "dosage": "Not recommended"
+                    },
+                    {
+                        "age_range": "12-17",
+                        "dosage": "120mg three times daily with meals"
+                    },
+                    {
+                        "age_range": "18+",
+                        "dosage": "120mg three times daily"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "disease": "Influenza",
+        "icd": "J10",
+        "medications": [
+            {
+                "name": "Oseltamivir",
+                "age_dosage_rules": [
+                    {
+                        "age_range": "0-1",
+                        "dosage": "3mg/kg twice daily (consult pediatrician)"
+                    },
+                    {
+                        "age_range": "1-12",
+                        "dosage": "30–60mg twice daily depending on weight"
+                    },
+                    {
+                        "age_range": "13+",
+                        "dosage": "75mg twice daily for 5 days"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "disease": "COVID-19",
+        "icd": "U07.1",
+        "medications": [
+            {
+                "name": "Paxlovid",
+                "age_dosage_rules": [
+                    {
+                        "age_range": "0-17",
+                        "dosage": "Not generally recommended"
+                    },
+                    {
+                        "age_range": "18+",
+                        "dosage": "Nirmatrelvir 300mg + Ritonavir 100mg twice daily for 5 days"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "disease": "Common Cold",
+        "icd": "J00",
+        "medications": [
+            {
+                "name": "Paracetamol + Cetirizine",
+                "age_dosage_rules": [
+                    {
+                        "age_range": "0-11",
+                        "dosage": "Paracetamol 10-15mg/kg, Cetirizine 5mg daily"
+                    },
+                    {
+                        "age_range": "12+",
+                        "dosage": "Paracetamol 500mg, Cetirizine 10mg once daily"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "disease": "Asthma",
+        "icd": "J45",
+        "medications": [
+            {
+                "name": "Salbutamol (Inhaler)",
+                "age_dosage_rules": [
+                    {
+                        "age_range": "0-4",
+                        "dosage": "1–2 puffs with spacer"
+                    },
+                    {
+                        "age_range": "5-11",
+                        "dosage": "2 puffs every 4-6 hrs"
+                    },
+                    {
+                        "age_range": "12+",
+                        "dosage": "2 puffs every 4 hrs as needed"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "disease": "Anemia",
+        "icd": "D64.9",
+        "medications": [
+            {
+                "name": "Ferrous Sulfate",
+                "age_dosage_rules": [
+                    {
+                        "age_range": "0-1",
+                        "dosage": "2–4 mg/kg/day elemental iron"
+                    },
+                    {
+                        "age_range": "2-11",
+                        "dosage": "30–60 mg/day elemental iron"
+                    },
+                    {
+                        "age_range": "12+",
+                        "dosage": "325mg once or twice daily"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "disease": "Allergic Rhinitis",
+        "icd": "J30",
+        "medications": [
+            {
+                "name": "Loratadine",
+                "age_dosage_rules": [
+                    {
+                        "age_range": "2-5",
+                        "dosage": "5mg once daily"
+                    },
+                    {
+                        "age_range": "6+",
+                        "dosage": "10mg once daily"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "disease": "Urinary Infection",
+        "icd": "N39.0",
+        "medications": [
+            {
+                "name": "Nitrofurantoin",
+                "age_dosage_rules": [
+                    {
+                        "age_range": "0-4",
+                        "dosage": "Not recommended"
+                    },
+                    {
+                        "age_range": "5-11",
+                        "dosage": "5–7 mg/kg/day in 4 doses"
+                    },
+                    {
+                        "age_range": "12+",
+                        "dosage": "100mg twice daily for 5 days"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "disease": "Gastritis",
+        "icd": "K29",
+        "medications": [
+            {
+                "name": "Omeprazole",
+                "age_dosage_rules": [
+                    {
+                        "age_range": "0-1",
+                        "dosage": "0.5–1 mg/kg once daily"
+                    },
+                    {
+                        "age_range": "2-11",
+                        "dosage": "10–20mg daily"
+                    },
+                    {
+                        "age_range": "12+",
+                        "dosage": "20mg once daily before food"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "disease": "Eczema",
+        "icd": "L30",
+        "medications": [
+            {
+                "name": "Hydrocortisone Cream 1%",
+                "age_dosage_rules": [
+                    {
+                        "age_range": "0-1",
+                        "dosage": "Apply thin layer once daily"
+                    },
+                    {
+                        "age_range": "2+",
+                        "dosage": "Apply 1–2 times daily to affected areas"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "disease": "Psoriasis",
+        "icd": "L40",
+        "medications": [
+            {
+                "name": "Calcipotriol + Betamethasone",
+                "age_dosage_rules": [
+                    {
+                        "age_range": "0-11",
+                        "dosage": "Specialist consultation"
+                    },
+                    {
+                        "age_range": "12+",
+                        "dosage": "Apply once daily to plaques"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "disease": "Migraine",
+        "icd": "G43",
+        "medications": [
+            {
+                "name": "Ibuprofen",
+                "age_dosage_rules": [
+                    {
+                        "age_range": "0-11",
+                        "dosage": "5–10 mg/kg per dose every 6–8 hrs"
+                    },
+                    {
+                        "age_range": "12+",
+                        "dosage": "400–600mg every 6 hrs as needed"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "disease": "Osteoarthritis",
+        "icd": "M15-M19",
+        "medications": [
+            {
+                "name": "Naproxen",
+                "age_dosage_rules": [
+                    {
+                        "age_range": "0-17",
+                        "dosage": "Not recommended"
+                    },
+                    {
+                        "age_range": "18-64",
+                        "dosage": "250–500mg twice daily"
+                    },
+                    {
+                        "age_range": "65+",
+                        "dosage": "Use lowest effective dose"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "disease": "Rheumatoid Arthritis",
+        "icd": "M06",
+        "medications": [
+            {
+                "name": "Methotrexate",
+                "age_dosage_rules": [
+                    {
+                        "age_range": "0-4",
+                        "dosage": "Not standard; refer to specialist"
+                    },
+                    {
+                        "age_range": "5+",
+                        "dosage": "7.5–25mg weekly (adult); pediatric per kg"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "disease": "Major Depressive Disorder",
+        "icd": "F32",
+        "medications": [
+            {
+                "name": "Sertraline",
+                "age_dosage_rules": [
+                    {
+                        "age_range": "0-5",
+                        "dosage": "Not recommended"
+                    },
+                    {
+                        "age_range": "6-17",
+                        "dosage": "Start at 25mg/day, titrate to 50mg"
+                    },
+                    {
+                        "age_range": "18+",
+                        "dosage": "50–200mg daily"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "disease": "Anxiety",
+        "icd": "F41.1",
+        "medications": [
+            {
+                "name": "Diazepam",
+                "age_dosage_rules": [
+                    {
+                        "age_range": "0-5",
+                        "dosage": "Use only in emergencies, pediatric consult"
+                    },
+                    {
+                        "age_range": "6-17",
+                        "dosage": "1–2mg 2–4 times daily"
+                    },
+                    {
+                        "age_range": "18+",
+                        "dosage": "2–10mg 2–4 times daily"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "disease": "Schizophrenia",
+        "icd": "F20",
+        "medications": [
+            {
+                "name": "Risperidone",
+                "age_dosage_rules": [
+                    {
+                        "age_range": "0-11",
+                        "dosage": "Pediatric psychiatry consult"
+                    },
+                    {
+                        "age_range": "12-17",
+                        "dosage": "Start at 0.5mg daily, titrate to 3mg"
+                    },
+                    {
+                        "age_range": "18+",
+                        "dosage": "Start 1mg twice daily, up to 6mg/day"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "disease": "Dermatitis",
+        "icd": "L20-L30",
+        "medications": [
+            {
+                "name": "Mometasone Cream",
+                "age_dosage_rules": [
+                    {
+                        "age_range": "0-1",
+                        "dosage": "Avoid unless prescribed"
+                    },
+                    {
+                        "age_range": "2-11",
+                        "dosage": "Apply once daily for 5–7 days"
+                    },
+                    {
+                        "age_range": "12+",
+                        "dosage": "Apply thin layer once daily"
+                    }
+                ]
+            }
+        ]
+    }
+]
