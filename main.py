@@ -5,8 +5,22 @@ from typing import List, Optional
 from transformers import pipeline
 from typing import List, Dict, Any
 
+from fastapi.middleware.cors import CORSMiddleware
+
+
 
 app = FastAPI()
+
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Or specify ["http://localhost:5001"] for more control
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # Load disease list from file once at startup
 with open("diseases.json", "r", encoding="utf-8") as f:
@@ -50,6 +64,13 @@ def get_dosage_by_age(age: int, rules: List[Dict[str, str]]) -> str:
                 return rule["dosage"]
     return "No dosage rule found"
 
+def get_icd_code(disease_name: str, disease_data: list) -> str:
+    for disease in disease_data:
+        if disease["disease"].lower() == disease_name.lower():
+            return disease["icd"]
+    return "Disease not found"
+
+
 @app.post("/predict")
 def predict(data: HealthData):
     diseases = data.diseases if data.diseases else COMMON_DISEASES
@@ -78,7 +99,8 @@ def predict(data: HealthData):
 
     return {
         "predicted_disease": result["labels"][0],
-        "predictions": [{"disease": label, "score": score} for label, score in zip(result["labels"], result["scores"])]
+        "predictions": [{"disease": label, "score": score} for label, score in zip(result["labels"], result["scores"])],
+        "icd_code": get_icd_code(result["labels"][0], disease_data)
     }
 
 @app.get("/medication")
